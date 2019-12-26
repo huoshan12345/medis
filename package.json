@@ -11,13 +11,15 @@
     "build": "rm -rf dist && webpack",
     "watch": "WEBPACK_WATCH=true npm run build",
     "start": "electron .",
-    "pack": "NODE_ENV=production npm run build && node bin/pack.js"
+    "pack": "NODE_ENV=production npm run build && node bin/pack.js",
+    "packwin": "set NODE_ENV=production && (if exist dist rmdir dist /q /s) && webpack && node bin/pack-win.js"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/luin/medis.git"
   },
   "dependencies": {
+    "acorn": "^7.1.0",
     "electron": "^4.2.2",
     "electron-context-menu": "^0.12.1",
     "fixed-data-table-contextmenu": "^1.7.2",
